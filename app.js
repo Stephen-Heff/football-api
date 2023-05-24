@@ -35,7 +35,7 @@ app.get("/", async (req, res) => {
         headers: {
           "x-rapidapi-host": "api-football-beta.p.rapidapi.com",
           "x-rapidapi-key":
-            "d5fcd74107msh32823c8331cb9f9p1f8a40jsnbd466bf5877f",
+            "API_KEY",
         },
         params: {
           season: "2022",
@@ -52,7 +52,7 @@ app.get("/", async (req, res) => {
           "https://www.googleapis.com/youtube/v3/search/",
           {
             params: {
-              key: "AIzaSyAXs7qqK8SHcErabAbOJnP01045mkHGY2I",
+              key: "API_KEY",
               q: `${fixture.teams.home.name} vs ${fixture.teams.away.name}`,
               part: "snippet",
               channelId: "UCD2lJITnvzflNhOqQckMpQg",
