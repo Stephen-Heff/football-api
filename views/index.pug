@@ -1,0 +1,112 @@
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    style 
+      include style.css 
+    title Home of Highlights
+  body
+    header#header 
+      .header-content   
+          h2#site-name 
+            a(href="/") H-ighlights
+          nav#main-navigation 
+            ul.menu-flex
+              li 
+                a(href="/NBA") NBA
+              li
+                a(href="/NHL") NHL
+    hr
+    main#main 
+      h1.fixtures Fixtures for 2023-04-01
+      br  
+      table
+        thead 
+          tr 
+            th Home  
+            th vs 
+            th Away    
+        tbody
+        each fixture, index in fixtures
+          tr  
+            td #{fixture.teams.home.name}
+            td 
+            td #{fixture.teams.away.name}
+          tr 
+            td 
+              img(src=fixture.teams.home.logo) 
+            td 
+            td 
+              img(src=fixture.teams.away.logo)
+          tr 
+            td
+            td.td-head FT Score
+            td               
+          tr 
+            td  #{fixture.goals.home}
+            td 
+            td #{fixture.goals.away}
+          tr 
+            td
+            td.td-head HT Score
+            td       
+          tr 
+            td #{fixture.score.halftime.home}    
+            td 
+            td #{fixture.score.halftime.home}
+          tr 
+            td     
+            td #{fixture.league.name}
+            td 
+          tr 
+            td     
+            td 
+              img(src=fixture.league.logo)
+            td 
+          tr 
+            td     
+            td.td-head Referee
+            td      
+          tr 
+            td     
+            td #{fixture.fixture.referee}
+            td  
+          tr 
+            td     
+            td.td-head Fubo Highlights
+            td  
+          tr 
+            td
+            td 
+              iframe(width="560", height="315", src=`https://www.youtube.com/embed/${videos[index].id.videoId}`, allowfullscreen="")  
+            td
+      h1.standings Standings
+      table
+        thead
+          tr
+            th.th-stat Team
+            th.th-stat Played
+            th.th-stat Won
+            th.th-stat Drawn
+            th.th-stat Lost
+            th.th-stat GF
+            th.th-stat GA
+            th.th-stat GD
+            th.th-stat Points
+        tbody
+          each team in standings
+            tr
+              td.td-stat.td-team #{team.team.name} 
+                img.stat-logo(src=team.team.logo)
+              td.td-stat #{team.all.played}
+              td.td-stat #{team.all.win}
+              td.td-stat #{team.all.draw}
+              td.td-stat #{team.all.lose}
+              td.td-stat #{team.all.goals.for}
+              td.td-stat #{team.all.goals.against}
+              td.td-stat #{team.goalsDiff}
+              td.td-stat #{team.points}               
+    hr           
+    footer#footer 
+      p &copy; Home of Highlights, 2023.
