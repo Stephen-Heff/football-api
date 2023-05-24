@@ -18,7 +18,7 @@ app.get("/", async (req, res) => {
         headers: {
           "x-rapidapi-host": "api-football-beta.p.rapidapi.com",
           "x-rapidapi-key":
-            "d5fcd74107msh32823c8331cb9f9p1f8a40jsnbd466bf5877f",
+            "API_KEY",
         },
         params: {
           season: "2022",
