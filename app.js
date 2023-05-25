@@ -12,13 +12,14 @@ app.set("view engine", "pug");
 // Route to fetch football data from API
 app.get("/", async (req, res) => {
   try {
+    // Fetch fixtures data from the API
     const response = await axios.get(
       "https://api-football-beta.p.rapidapi.com/fixtures",
       {
         headers: {
           "x-rapidapi-host": "api-football-beta.p.rapidapi.com",
           "x-rapidapi-key":
-            "API_KEY",
+            "API_KEY", // Replace with your RapidAPI key
         },
         params: {
           season: "2022",
@@ -29,13 +30,14 @@ app.get("/", async (req, res) => {
     );
     const fixtures = response.data.response;
 
+    // Fetch standings data from the API
     const standingR = await axios.get(
       "https://api-football-beta.p.rapidapi.com/standings",
       {
         headers: {
           "x-rapidapi-host": "api-football-beta.p.rapidapi.com",
           "x-rapidapi-key":
-            "API_KEY",
+            "API_KEY", // Replace with your RapidAPI key
         },
         params: {
           season: "2022",
@@ -46,13 +48,14 @@ app.get("/", async (req, res) => {
 
     const standings = standingR.data.response[0].league.standings[0];
 
+    // Fetch YouTube videos for each fixture
     const youtubePromises = fixtures.map(async (fixture) => {
       try {
         const videoResponse = await axios.get(
           "https://www.googleapis.com/youtube/v3/search/",
           {
             params: {
-              key: "API_KEY",
+              key: "API_KEY", // Replace with your YouTube Data API key
               q: `${fixture.teams.home.name} vs ${fixture.teams.away.name}`,
               part: "snippet",
               channelId: "UCD2lJITnvzflNhOqQckMpQg",
@@ -82,5 +85,6 @@ app.listen(port, () =>
   console.log(`Server running at http://localhost:${port}`)
 );
 
-console.log(Fdate);
-console.log(date);
+console.log(Fdate); // Log formatted date
+console.log(date); // Log original date
+
