@@ -1,6 +1,35 @@
 # football-api
 
-This repository contains a Football API and Youtube's API for accessing football-related data. The API's provides a convenient way to retrieve information about  football matches and as well as watch the highlights. It can be used for a wide range of applications, such as building football-related websites, creating analytics tools, or developing mobile applications.
+This repository contains a Football API and Youtube's API for accessing football-related data. The API's provides a convenient way to retrieve information about  football matches and as well as watching the highlights. 
+
+#Installation
+To get started with the Football API, you can either clone this repository or download the source code as a ZIP file.
+
+If you choose to clone the repository, open a terminal and run the following command:
+
+```bash
+git clone https://github.com/Stephen-Heff/football-api.git
+```
+#Usage
+Before using the Football API, you need to have a working environment with Node.js and npm (Node Package Manager) installed. Follow these steps to set up the API:
+
+Navigate to the project directory using the terminal:
+
+```bash
+cd football-api
+```
+
+Install the required dependencies:
+```bash
+npm install
+```
+
+Include your x-rapidapi-key and Google API key
+
+Start the API server:
+```bash
+npm run dev
+```
 
 
 ![img1](https://github.com/Stephen-Heff/football-api/assets/107089079/769c57d8-b0a4-4d77-a0f3-98fd4426933b)
