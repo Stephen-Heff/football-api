@@ -13,20 +13,19 @@ git clone https://github.com/Stephen-Heff/football-api.git
 #Usage
 Before using the Football API, you need to have a working environment with Node.js and npm (Node Package Manager) installed. Follow these steps to set up the API:
 
-Navigate to the project directory using the terminal:
+1. Navigate to the project directory using the terminal:
 
 ```bash
 cd football-api
 ```
-
-Install the required dependencies:
+2. Install the required dependencies:
 ```bash
 npm install
 ```
 
-Include your x-rapidapi-key and Google API key
+3. Include your x-rapidapi-key and Google API key
 
-Start the API server:
+4. Start the API server:
 ```bash
 npm run dev
 ```
