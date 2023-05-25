@@ -22,6 +22,9 @@ cd football-api
 ```bash
 npm install
 ```
+```bash
+npm install axios
+```
 
 3. Include your x-rapidapi-key and Google API key in app.js file
 
