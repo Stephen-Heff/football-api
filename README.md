@@ -23,7 +23,7 @@ cd football-api
 npm install
 ```
 
-3. Include your x-rapidapi-key and Google API key
+3. Include your x-rapidapi-key and Google API key in app.js file
 
 4. Start the API server:
 ```bash
